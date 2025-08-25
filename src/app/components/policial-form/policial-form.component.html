@@ -1,1 +1,41 @@
-<p>policial-form works!</p>
+<h2>{{ isEdit ? 'Editar Usuário' : 'Novo Usuário' }}</h2>
+<form [formGroup]="policialForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="RG_civil" class="form-label">RG Civil</label>
+    <input type="text" id="RG_civil" formControlName="RG_civil" class="form-control">
+    <div *ngIf="policialForm.get('RG_civil')?.invalid && policialForm.get('RG_civil')?.touched" class="form-text text-danger">
+      RG civil é obrigatório.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="RG_militar" class="form-label">RG Militar</label>
+    <input type="text" id="RG_militar" formControlName="RG_militar" class="form-control">
+    <div *ngIf="policialForm.get('RG_militar')?.invalid && policialForm.get('RG_militar')?.touched" class="form-text text-danger">
+      RG Militar é obrigatório.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="cpf" class="form-label">CPF</label>
+    <input type="text" id="cpf" formControlName="cpf" class="form-control">
+    <div *ngIf="policialForm.get('cpf')?.invalid && policialForm.get('cpf')?.touched" class="form-text text-danger">
+      CPF é obrigatório.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+    <input type="text" id="dataNascimento" formControlName="dataNascimento" class="form-control">
+    <div *ngIf="policialForm.get('dataNascimento')?.invalid && policialForm.get('dataNascimento')?.touched" class="form-text text-danger">
+      data de Nascimento é obrigatório.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="matricula" class="form-label">Matrícula</label>
+    <input type="text" id="matricula" formControlName="matricula" class="form-control">
+    <div *ngIf="policialForm.get('matricula')?.invalid && policialForm.get('matricula')?.touched" class="form-text text-danger">
+      Matrícula é obrigatório.
+    </div>
+  </div>
+  
+  <button type="submit" class="btn btn-success" [disabled]="policialForm.invalid">Salvar</button>
+  <a routerLink="/policiais" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
