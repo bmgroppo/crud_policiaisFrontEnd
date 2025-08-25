@@ -1,16 +1,16 @@
 <h2>{{ isEdit ? 'Editar Usuário' : 'Novo Usuário' }}</h2>
 <form [formGroup]="policialForm" (ngSubmit)="onSubmit()">
   <div class="mb-3">
-    <label for="RG_civil" class="form-label">RG Civil</label>
-    <input type="text" id="RG_civil" formControlName="RG_civil" class="form-control">
-    <div *ngIf="policialForm.get('RG_civil')?.invalid && policialForm.get('RG_civil')?.touched" class="form-text text-danger">
+    <label for="rg_civil" class="form-label">RG Civil</label>
+    <input type="text" id="rg_civil" formControlName="rg_civil" class="form-control">
+    <div *ngIf="policialForm.get('rg_civil')?.invalid && policialForm.get('rg_civil')?.touched" class="form-text text-danger">
       RG civil é obrigatório.
     </div>
   </div>
   <div class="mb-3">
-    <label for="RG_militar" class="form-label">RG Militar</label>
-    <input type="text" id="RG_militar" formControlName="RG_militar" class="form-control">
-    <div *ngIf="policialForm.get('RG_militar')?.invalid && policialForm.get('RG_militar')?.touched" class="form-text text-danger">
+    <label for="rg_militar" class="form-label">RG Militar</label>
+    <input type="text" id="rg_militar" formControlName="rg_militar" class="form-control">
+    <div *ngIf="policialForm.get('rg_militar')?.invalid && policialForm.get('rg_militar')?.touched" class="form-text text-danger">
       RG Militar é obrigatório.
     </div>
   </div>
@@ -22,9 +22,9 @@
     </div>
   </div>
   <div class="mb-3">
-    <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-    <input type="text" id="dataNascimento" formControlName="dataNascimento" class="form-control">
-    <div *ngIf="policialForm.get('dataNascimento')?.invalid && policialForm.get('dataNascimento')?.touched" class="form-text text-danger">
+    <label for="data_nascimento" class="form-label">Data de Nascimento</label>
+    <input type="text" id="data_nascimento" formControlName="data_nascimento" class="form-control">
+    <div *ngIf="policialForm.get('data_nascimento')?.invalid && policialForm.get('data_nascimento')?.touched" class="form-text text-danger">
       data de Nascimento é obrigatório.
     </div>
   </div>

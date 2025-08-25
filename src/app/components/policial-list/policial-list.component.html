@@ -1,35 +1,36 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
   <h2>Lista de Policiais</h2>
-  <a routerLink="/policiais/novo" class="btn btn-primary">Novo Policial</a>
+  <a [routerLink]="['/policiais/novo']" class="btn btn-primary">Novo Policial</a>
 </div>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>RG Civil</th>
-      <th>RG Militar</th>
-      <th>CPF</th>
-      <th>Data de Nascimento</th>
-      <th>Matrícula</th>
-      <th style="width: 150px;">Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let policiais of policiais">
-      <td>{{ policiais.id }}</td>
-      <td>{{ policiais.rg_civil }}</td>
-      <td>{{ policiais.rg_militar }}</td>
-      <td>{{ policiais.cpf }}</td>
-      <td>{{ policiais.data_nascimento | date: 'dd/MM/yyyy' }}</td>
-      <td>{{ policiais.matricula }}</td>
-      
-      <td>
-        <a [routerLink]="['/policiais/editar', policiais.id]" class="btn btn-sm btn-outline-secondary">Editar</a>
-        <button (click)="deletePolicial(policiais.id)" class="btn btn-sm btn-outline-danger ms-2">Excluir</button>
-      </td>
-    </tr>
-    <tr *ngIf="policiais.length === 0">
-        <td colspan="4" class="text-center">Nenhum Policial encontrado.</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>RG Civil</th>
+        <th>RG Militar</th>
+        <th>CPF</th>
+        <th>Data de Nascimento</th>
+        <th>Matrícula</th>
+        <th style="width: 150px;">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let policial of policiais">
+        <td>{{ policial.id }}</td>
+        <td>{{ policial.rg_civil }}</td>
+        <td>{{ policial.rg_militar }}</td>
+        <td>{{ policial.cpf }}</td>
+        <td>{{ policial.data_nascimento | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ policial.matricula }}</td>
+        <td>
+          <a [routerLink]="['/policiais/editar', policial.id]" class="btn btn-sm btn-outline-secondary">Editar</a>
+          <button (click)="deletePolicial(policial.id)" class="btn btn-sm btn-outline-danger ms-2">Excluir</button>
+        </td>
+      </tr>
+      <tr *ngIf="!policiais || policiais.length === 0">
+          <td colspan="7" class="text-center">Nenhum Policial encontrado.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

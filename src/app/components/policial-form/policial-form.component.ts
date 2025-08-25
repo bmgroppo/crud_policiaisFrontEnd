@@ -24,10 +24,10 @@ export class PolicialFormComponent implements OnInit {
   ) {
     this.policialForm = this.fb.group({
       nome: ['', Validators.required],
-      RG_civil: ['', Validators.required],
-      RG_militar: ['', Validators.required],
+      rg_civil: ['', Validators.required],
+      rg_militar: ['', Validators.required],
       cpf: ['', Validators.required],
-      dataNascimento: ['', Validators.required],
+      data_nascimento: ['', Validators.required],
       matricula:['', Validators.required]
     });
   }
