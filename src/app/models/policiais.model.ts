@@ -4,4 +4,5 @@ export interface Policiais{
     rg_militar:string;
     cpf:string;
     data_nascimento:Date;
+    matricula:string
 }

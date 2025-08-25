@@ -23,10 +23,13 @@ export class PolicialListComponent implements OnInit {
       this.policiais = data;
     });
   }
-  deletePolicial(id: number): void {
-    if (confirm('Tem certeza que deseja excluir este policial?'))
-      this.policiaisService.deletePolicial(id).subscribe(() => {
+  deletePolicial(id: number | undefined): void {
+    if (confirm('Tem certeza que deseja excluir este policial?')) {
+      if (id !== undefined) {
+        this.policiaisService.deletePolicial(id).subscribe(() => {
         this.policiais = this.policiais.filter(policiais => policiais.id !== id);
-      });
+        });
+      }
+    }
   }
 }
