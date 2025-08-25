@@ -1,4 +1,4 @@
-export interface Policial{
+export interface Policiais{
     id?:number;
     rg_civil:string;
     rg_militar:string;
