@@ -23,7 +23,6 @@ export class PolicialFormComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.policialForm = this.fb.group({
-      nome: ['', Validators.required],
       rg_civil: ['', Validators.required],
       rg_militar: ['', Validators.required],
       cpf: ['', Validators.required],
